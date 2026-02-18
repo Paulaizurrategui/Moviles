@@ -1,0 +1,197 @@
+🧪 EXAMEN ANDROID — KOTLIN
+Aplicación: Calculadora avanzada con fragments y persistencia
+🎯 Objetivo
+
+Desarrollar una aplicación Android en Kotlin que implemente una calculadora funcional aplicando los conceptos vistos en clase: fragments, navegación, paso de datos, menú contextual, persistencia y base de datos ROOM.
+
+📱 FUNCIONALIDAD GENERAL
+
+La app tendrá un Activity principal que gestione la navegación entre fragments.
+
+La aplicación debe permitir:
+
+1️⃣ Realizar operaciones matemáticas
+2️⃣ Mostrar historial de operaciones
+3️⃣ Guardar resultados en base de datos
+4️⃣ Mantener datos al rotar pantalla
+5️⃣ Pasar datos entre fragments
+
+🧩 ESTRUCTURA OBLIGATORIA
+Fragment 1 → Calculadora
+
+Debe contener:
+
+2 TextInputEditText → número A y número B
+
+Botones:
+
+Sumar
+
+Restar
+
+Multiplicar
+
+Dividir
+
+TextView → resultado
+
+Botón → guardar operación
+
+Comportamiento:
+
+Al pulsar operación → mostrar resultado
+
+Al guardar → enviar datos al Fragment Historial
+
+El resultado debe mantenerse al rotar pantalla (ViewModel)
+
+👉 Aplicar paso de datos Fragment → Activity mediante interfaz (según tus apuntes).
+
+Fragment 2 → Historial
+
+Debe mostrar:
+
+Lista de operaciones realizadas
+
+Botón borrar historial
+
+Botón ver detalle
+
+Persistencia obligatoria:
+
+Guardar cada operación en ROOM con:
+
+Clase Entity → Operacion
+Campos:
+
+id (auto)
+
+numero1
+
+numero2
+
+operacion
+
+resultado
+
+DAO obligatorio:
+
+insert
+
+delete
+
+getAll
+
+getById
+
+La lista debe cargarse al abrir el fragment (persistencia real).
+
+Fragment 3 → Detalle de operación
+
+Se accede desde Historial.
+
+Debe mostrar:
+
+número 1
+
+número 2
+
+operación
+
+resultado
+
+👉 El paso de datos debe hacerse mediante:
+
+argumentos del Navigation Component
+o
+
+newInstance con parámetros
+
+(según lo visto en clase)
+
+🧭 NAVEGACIÓN
+
+Debe implementarse con:
+
+✔ Navigation Component
+✔ mobile_navigation.xml
+✔ Paso de argumentos entre fragments
+
+📌 MENÚ CONTEXTUAL OBLIGATORIO
+
+En el resultado de la calculadora:
+
+Al mantener pulsado el TextView del resultado debe aparecer un menú con:
+
+Guardar resultado
+
+Limpiar pantalla
+
+Ir al historial
+
+Debe implementarse con:
+registerForContextMenu
+onCreateContextMenu
+onContextItemSelected
+
+💾 PERSISTENCIA ADICIONAL
+
+Usar SharedPreferences para:
+
+Guardar la última operación realizada
+
+Recuperarla al iniciar la app y mostrarla automáticamente
+
+🧠 GESTIÓN DE ESTADO
+
+Debe mantenerse al rotar pantalla:
+
+✔ Resultado actual
+✔ Datos introducidos
+✔ Contenido del historial cargado
+
+Usar ViewModel.
+
+🎨 INTERFAZ OBLIGATORIA
+
+Debe incluir:
+
+BottomNavigation o menú de navegación
+
+Material Components
+
+Layout con ViewBinding
+
+🧩 PUNTOS EXTRA (como haría tu profe)
+
+⭐ Diálogo de confirmación al borrar historial
+⭐ Animaciones entre fragments
+⭐ Validación de división entre 0
+⭐ Tema visual personalizado
+
+📝 CRITERIOS DE EVALUACIÓN
+Apartado	Puntos
+Calculadora funcional	2
+Uso correcto de fragments	2
+Navegación entre fragments	1
+Paso de datos correcto	1
+Base de datos ROOM	2
+Persistencia SharedPreferences	1
+ViewModel y rotación	1
+
+TOTAL → 10 puntos
+
+💡 SI ESTE FUERA TU EXAMEN REAL…
+
+Te caerían estos pasos prácticos:
+
+✔ Crear fragments
+✔ Binding en Activity y fragments
+✔ Interfaz fragment → activity
+✔ Navigation XML
+✔ Argumentos entre fragments
+✔ ROOM completo
+✔ Menú contextual
+✔ SharedPreferences
+
+TODO eso aparece literalmente en tus apuntes
